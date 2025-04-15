@@ -19,6 +19,8 @@
     "prettier": "^3.5.3"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mongoose": "^8.13.2"
@@ -27,4 +29,3 @@
     "dev": "nodemon = auto-restart on file changes; -r dotenv/config = load env early; --experimental-json-modules = import .json using ESM; src/index.js = entry file"
   }
 }
-

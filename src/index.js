@@ -4,12 +4,26 @@ import dotenv from "dotenv"
 // then you must load them before this line executes. Otherwise, process.env.PORT will be undefined.
 
 import connectDB from "./db/index.js";
+// import {app} from
 
 dotenv.config({
     path: './env'
 })
 
 connectDB()
+.then(() => {
+    app.on("error", (error) => {
+        console.log("ERROR: ", error);
+        throw error
+    })
+
+    app.listen(process.env.PORT || 8000, () => {
+        console.log(`Server is running at port : ${process.env.PORT}`);
+    })
+})
+.catch((err) => {
+    console.log("MONGODB connection failed !!", err);
+})
 
 
 
